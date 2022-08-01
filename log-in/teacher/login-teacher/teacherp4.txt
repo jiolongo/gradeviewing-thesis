@@ -1,0 +1,265 @@
+<?php 
+	require_once("session.php");
+
+	include("includes/datauser_teacher.php");
+	
+	if($num_rows)
+	{
+	include("header.php");
+	include("sidebar.php");
+    }
+?>
+
+
+
+<?php
+       
+        $sy=$_GET['schoolyear'];    
+        $subject=$_GET['subject']; 
+        $level=$_GET['level']; 
+        $gradesection=$_GET['gradesection']; 
+
+        $query_acc=mysqli_query($con,"SELECT * FROM tblteacher WHERE facultyid='$usern'");
+        $num_rows=mysqli_num_rows($query_acc);
+
+        while($fetch=mysqli_fetch_assoc($query_acc))
+        {
+        $lname=$fetch['lastname'];
+        $fname=$fetch['firstname'];
+        $mname=$fetch['middlename'];
+        $email=$fetch['email'];
+        $gender=$fetch['gender'];	
+        }
+ ?>
+
+
+              
+<section class="home-section">
+						
+
+
+<div class="mains">
+
+ 		
+
+             
+<div class="container">
+<div class="panel panel-default"style="width:1080px;  ">
+  <div class="panel-heading1" ><i class="fas fa-book"></i> Teacher Records - School Year - List of Subjects - Section - View Students</div>
+  <div class="panel-body">
+
+  <table>			 
+                    
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p>
+                           
+                            <?php echo "	<b>School Year : </b>".$sy."</br>"; ?>            	
+                            <?php echo "	<b>Subject : </b>".$subject."</br>"; ?> 
+                            <?php echo "	<b>Grade & Section : </b>".$gradesection."</br>"; ?> 
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                 
+                    </table>
+  
+
+    <?php 
+    
+      $query = "SELECT * FROM tblsubjloadstudent WHERE subject IN ('$subject') and schoolyear in ('$sy') and gradesection = '$gradesection' ORDER BY studentid ASC";
+      $result = mysqli_query($con, $query);
+      
+        ?>
+      
+
+      <?php
+                     
+                      //  $departquery = "SELECT * FROM tblgradesection WHERE gradedesc IN ('$level')";
+                      //   $result1 = mysqli_query($con, $departquery);
+                      //   while($row1 = mysqli_fetch_array($result1))
+                      //   {
+                      //     $departmentdesc=$row1["departmentdesc"];
+                      //   } 
+                      //   $query = "SELECT *  FROM tblgradingperiod WHERE department IN ('$departmentdesc')";
+                      //   $result2 = mysqli_query($con, $query);
+                        
+                    
+
+     ?>
+
+
+      <div class="table-responsive" style="width:1050px;height:350px; font-size:12px;">
+          <table  id="manageteachersubjectload" class="table table-bordered table-striped table-hover"  style="width:1050px;">
+
+
+
+             <thead>
+                 <tr>
+                   
+                    <th>Student ID </th>
+                                 
+                    <th>Fullname </th>
+                                <?php                        
+                          //   if(mysqli_num_rows($result2) > 0)
+                          //   {
+                          //       foreach($result2 as $row)
+                          //       { 
+                          //   $gradingperiod=$row["gradingperiod"];    
+                             ?>     
+                           <th><?php// echo $gradingperiod ?> </th>
+                                   <?php     
+                          //       }
+                          //   }
+                            ?>
+                 <th>Average </th>
+                 <th>Action </th>
+                 </tr>
+             </thead>
+                                     <?php   //$average=0; ?>
+
+                                      <?php
+                                     
+                                      while($row = mysqli_fetch_array($result))
+                                      {
+                                        $student=$row["studentid"];
+                                      
+                                        ?>
+                                      <tr >
+                                            
+                      <td><h5><?php echo $student; ?></h5></td>
+
+                                    <?php   
+                                     
+                                    $query1 = "SELECT * FROM tblstudents WHERE studentid = '$student' ORDER BY lastname asc";
+                                    $result1 = mysqli_query($con, $query1);
+
+
+                                    while($row1 = mysqli_fetch_array($result1))
+                                    {
+                                    $studfname=$row1["firstname"];
+                                    $studmname=$row1["middlename"];
+                                    $studlname=$row1["lastname"];
+                                  
+                          
+                                    ?>
+                                    <td><h5><?php echo $studlname.', '.$studfname.' '.$studmname ?></h5></td>
+                                              
+                                                 
+                                     <?php
+                                    }
+                                   
+                                    $queryselect = "SELECT id FROM tblsubjloadstudent where studentid IN ('$student') and subject IN ('$subject') and  subjectgradelevel IN ('$level') and  gradesection IN ('$gradesection') and schoolyear IN ('$sy')";
+                                    $stud = mysqli_query($con, $queryselect);
+
+
+
+                            
+
+                                    while($rowstud = mysqli_fetch_array($stud))
+                                    {
+                                      $studentsubjid=$rowstud["id"];
+                                    }
+                                    
+                                 
+
+                                    
+                                      
+
+
+                                      $select = "SELECT grade FROM tblgrade where studentsubjloadid IN ('$studentsubjid') ";
+                                      $studgrade = mysqli_query($con, $select);
+                                    
+                                    
+                                      $sum= 0;
+                                      $multiplier =0; 
+                                     
+                                       while($rowstudgrade = mysqli_fetch_array($studgrade))
+                                     {
+                                       $grade=$rowstudgrade["grade"]; 
+
+                                  
+
+                                                  if($grade>=1){
+                                                    $multiplier++; 
+                                                    
+                                                  }
+                                                  
+                                                
+                                                
+                                                  
+                                              
+                                                ?>
+                                              <td><input type="text" name="" id=""><h5>  <?php echo $grade ?>  </h5></td>
+                                          
+                                             <?php
+                                              
+                                              $sum = $sum + $grade;
+                                                
+                                          
+                                            $average=$sum /$multiplier;
+                                }
+                               
+                                        ?>
+
+
+                               
+                                <td><h5>  <?php  echo $average   ?>  </h5></td>
+                               <?php   $average=0; ?>
+
+                                  <td ><h5><?php  echo "  <a href='teacherp5.php?schoolyear=$sy&subject=$subject&level=$level&gradesection=$gradesection&student=$student'> Edit/Assign </a>"  ?> </h5></td>
+
+                                  <?php    
+                                  }                         
+                             
+                          ?>
+     
+
+
+
+
+
+
+        
+     
+               </tr>
+           
+
+         
+         </table>
+       
+     </div>
+  
+    
+     <?php
+       echo "  <a href='teacherp3.php?schoolyear=$sy&subject=$subject&level=$level'><input type='Submit' class='addbtn' value='Go Back'>  </a>";
+      
+     
+     ?>
+  
+</div>
+</div>
+
+
+
+
+  </div> 
+ 
+  </div> 
+
+
+
+
+</section>
+						   
+	   
+
+
+
+
+
+
+				<?php
+include("footer.php");
+?>

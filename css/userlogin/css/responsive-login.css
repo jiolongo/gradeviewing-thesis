@@ -1,0 +1,58 @@
+
+ @media (max-width: 576px) { 
+      
+ 
+    .login-card {
+       
+       margin-top: 200px;
+       
+        
+      
+    }
+    
+
+
+
+
+
+}
+
+
+@media (max-width: 768px) { 
+          
+  
+}
+
+
+@media (max-width: 992px) { 
+          
+
+    .nav-container .text-en1{
+  
+    font-size: 15px;
+  
+    }
+  .nav-container .text-en2{
+   
+    font-size: 10px;
+ 
+    
+  }
+
+
+
+}
+
+
+@media (max-width: 1200px) {
+  .nav-container .text-en1{
+  
+    font-size: 15px;
+   
+    
+  }
+
+
+
+
+}

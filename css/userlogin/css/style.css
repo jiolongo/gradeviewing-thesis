@@ -1,0 +1,355 @@
+
+body {
+  max-width: auto;
+  height: 100%;
+	padding: 0;
+	margin: 0;
+  background-image: url("../../../images/Eu/manuelenverga.jpg"); 
+  background-size: cover; 
+  font-family: 'Roboto Slab', serif;
+  background-repeat: no-repeat center center fixed;
+  background-attachment: fixed;
+	overflow: hidden;
+}
+
+
+
+
+
+.login-card {
+ 
+    margin: 25% auto;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    background-color: rgb(255, 255, 255, .7);   
+    border-radius: 6px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+}
+
+.headinglogin{
+  display: flex;
+  margin-bottom: 30px;
+  }
+
+.image-login{
+  margin: 0 10px 0 0 ;
+  width: 50px;
+  height: 50px;
+}
+
+.login-card .heading{
+  
+  text-align: center;
+  color: maroon;
+  font-size: 15px;
+ 
+  font-weight: 700;
+}
+
+
+
+.login-card .heading1-register{
+  
+  font-weight: bold;
+  text-align: center;
+  color: maroon;
+  font-size:30px;
+  text-align: left;
+  margin: 0   0 50px 55px  ;
+  
+}
+
+.login-card .heading-user{
+  
+  font-weight: bold;
+  text-align: center;
+  color: maroon;
+  font-size: 25px;
+  
+  margin: 0 auto 50px;
+  
+}
+
+
+
+
+.textbox-edit{
+margin: 0 auto ;
+}
+
+
+
+.login {
+ 
+  text-align: center;
+  font-size: 15px;
+  
+  font-weight: 700;
+  height: 40px;
+  width: 260px;
+  padding: 5px;
+  user-select: none; 
+}
+
+.login-submit {
+ 
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: maroon;
+  border-radius: 5px;
+  
+}
+
+.login-submit:hover {
+ 
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #c53232;
+}
+
+.login-card a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-card a:hover {
+  opacity: 1;
+}
+
+.login-help {
+  width: 100%;
+  text-align: center;
+ 
+  display: grid;
+}
+.help{
+  margin: 15px 0 0 0 ;
+  font-size: 20px;
+  color: maroon;
+  font-weight: 700;
+}
+
+/*------------------------------------------------------------------*/
+
+
+.group {
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 15px;
+ 
+}
+.textbox {
+ 
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 5px;
+  display: block;
+  width: 280px;
+  height: 25px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+.textbox:focus {
+  outline: none;
+}
+.group label {
+ 
+   color: rgba(70, 61, 61, 0.4);
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all; 
+  
+}
+/* active state */
+
+.textbox:focus ~ label,
+.textbox:valid ~ label {
+  top: -30px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+ 
+}
+/* BOTTOM BARS ================================= */
+
+.bar {
+  position: relative;
+  display: block;
+  width: 250px;
+}
+.bar:before,
+.bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+/* active state */
+
+.textbox:focus ~ .bar:before,
+.textbox:focus ~ .bar:after {
+  width: 50%;
+}
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+/* active state */
+
+.textbox:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+/* ANIMATIONS ================ */
+
+@keyframes inputHighlighter {
+  from {
+      background: #5264AE;
+  }
+  to {
+      width: 0;
+      background: transparent;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px){
+ 
+  .login-card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+    padding: 30px;
+    width: 380px; 
+  }
+   
+  .login-card .heading{
+  
+    
+    font-size:20px;
+   
+  
+  }
+  
+
+  .login-card .heading-user{
+    font-size:30px;
+    margin: 0   0 50px 80px  ;
+  }
+
+  
+.textbox-edit{
+  margin: 0px 60px ;
+  }
+  .textbox {
+  
+    
+    width: 250px;
+    
+  }
+
+
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1000px){
+ 
+  .login-card {
+   
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    padding: 30px;
+      width: 380px;
+  }
+  .login-card .heading{
+  
+   
+    font-size:20px;
+   
+    
+  }
+  
+
+  .login-card .heading-user{
+ 
+  
+    
+    
+    margin: 0 auto 50px;
+    font-size: 30px;
+    margin: 0  auto 50px ;
+    
+  }
+   
+
+
+  .textbox-edit{
+    margin: 0px 60px ;
+    }
+    
+    .textbox {
+  
+    
+      width: 250px;
+      
+    }
+
+
+
+}

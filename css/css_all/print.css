@@ -1,0 +1,118 @@
+ * {
+  box-sizing: border-box;
+  /* -moz-box-sizing: border-box; */
+/* 
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+       appearance: auto; */
+
+
+} 
+
+
+@page
+{
+  size: A4 portrait;
+  margin: 0;
+
+
+
+
+}
+
+@page :blank {
+  @top-center { 
+    content: "This page is intentionally left blank";
+    }
+}
+
+
+
+
+td {
+  border: none;
+}
+
+#styled-table{
+  border: none;
+ 
+
+}
+
+
+
+
+
+
+
+
+
+
+/* print styles */
+@media print {
+
+
+
+
+  @page
+  {
+   
+    margin: 0;
+    
+  
+  
+  
+  }
+  
+
+  #styled-table td:nth-child(4) {
+    display: none;
+  }
+
+  #styled-table th:nth-child(4) {
+    display: none;
+  }
+
+
+  .panel{
+    border-radius: 0;
+    border: none;
+    
+  }
+  #print-btn
+  {
+    display: none;
+    visibility: none;
+  }
+  
+  .navigation{
+       display: none; 
+      height: 0%;
+      
+  }
+  
+  
+  .sidebar{
+       display: none; 
+      width: 0;
+     
+  } 
+  
+  .selection{
+       display: none;
+  }
+  
+  .addbtn{
+    display: none;
+  }
+  
+  
+  
+
+  .styled-table{
+    
+    font-size: 20px;
+  }
+}
+
+

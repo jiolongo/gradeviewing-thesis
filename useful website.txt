@@ -1,0 +1,43 @@
+http://www.learningaboutelectronics.com/Articles/How-to-add-a-column-to-a-MySQL-table-using-PHP.php
+https://www.youtube.com/watch?v=FNXTZ4_X8os
+https://www.youtube.com/watch?v=iP63fDXk-W8
+https://www.youtube.com/watch?v=nd9nOQemVAc  ---- inline edit side button
+https://www.webslesson.info/2020/10/how-to-make-editable-datatable-in-php-using-x-editable-plugin.html
+https://www.webslesson.info/2020/05/make-editable-datatable-using-jquery-tabledit-plugin-with-php-ajax
+https://www.youtube.com/watch?v=JDxKdfkXmsQ&t=169s
+https://www.codinglabweb.com/2021/06/dropdown-sidebar-menu-html-css.html
+
+
+https://www.youtube.com/watch?v=F-0P12xOVGM&t=365s
+https://www.youtube.com/watch?v=k3cwPmdrkm4
+https://fundaofwebit.com/post/how-to-fetch-multiple-values-in-checkbox-and-store-in-mysql-using-php
+https://github.com/sushma-singh-yadav/PHP/tree/master/Multiple-checkbox
+https://fundaofwebit.com/post/how-to%20filter-find-data-from-db-using-multiple-checkbox-in-php-mysql
+https://www.youtube.com/watch?v=j3vK2I5LoBw   -- checkboxes in multiple data
+
+
+delete+responsivedeletedata
+https://tutorial101.blogspot.com/2020/12/delete-multiple-records-by-selecting.html - https://www.youtube.com/watch?v=thkz_yICCbc
+
+https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php --session identify
+https://www.youtube.com/watch?v=wfjOl-QOxbM-- print page
+http://cooldecoder.blogspot.com/2010/11/print-preview-using-javascript.html
+https://www.quackit.com/css/at-rules/css_page_at-rule.cfm  ---@page configuration
+https://freefrontend.com/css-border-examples/ ---borders design
+https://stackoverflow.com/questions/18796221/creating-a-select-box-with-a-search-option - select tag searchjquery
+https://stackoverflow.com/questions/31133249/searchable-select-option - dom jquery
+https://makitweb.com/make-a-dropdown-with-search-box-using-jquery/
+https://codepen.io/abdelrhmansaid/pen/OJRNOpQ - for help hover button
+
+https://www.youtube.com/watch?v=VnvzxGWiK54
+
+
+
+
+
+
+
+
+
+
+
